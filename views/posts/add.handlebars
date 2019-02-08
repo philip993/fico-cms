@@ -1,0 +1,15 @@
+<div class="card text-center" style="width: 70%; margin: auto; position:relative; margin-top: 30px;">
+    <h3>Create New Post</h3>
+    <form action="/posts" method="POST">
+        <div class="form-group">
+            <label for="title" class="badge badge-light" style="width: 12rem; font-size: 1.5rem;">Title</label>
+            <input type="text" class="form-control" id="title" placeholder="Enter post title" name='title' value="{{title}}">
+        </div>
+
+        <div class="form-group">
+            <label for="content" class="badge badge-light" style="width: 12rem; font-size: 1.5rem;">Content</label>
+            <textarea class="form-control" id="content" rows="3" name='content' value='{{content}}'></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Add new post</button>
+    </form>
+</div>

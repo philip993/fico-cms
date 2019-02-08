@@ -1,0 +1,55 @@
+<!--
+ {{#each posts}}
+
+<div class="card" style="width: 24rem;">
+    <div>
+        Posted on: {{date}}
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+        <p class="card-text">{{content}}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
+
+{{else}}
+<h3>No posts yet.</h3>
+{{/each}} 
+-->
+{{#each posts}}
+<div class="card text-center" style="width: 70%; margin: auto; margin-top: 25px; margin-bottom: 25px;">
+    <div class="card-header" style="padding: 20px; text-align:left;">
+        Featured
+        <a href="/posts/edit/{{id}}" class='btn btn-dark' style="float:right; margin-left: 5px;">EDIT</a>
+        <div style="float:right;">
+
+            <form action="/posts/{{id}}?_method=DELETE" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" class='btn btn-danger' value="Delete">
+            </form>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <h2 class="card-title">{{title}}</h5>
+            <p class="card-text">{{content}}</p>
+    </div>
+    <div>
+        {{#each user}}
+        <p>{{username}}</p>
+        <p>{{age}}</p>
+        {{/each}}
+    </div>
+    <div class="card-footer text-muted">
+        Posted: {{date}}
+    </div>
+</div>
+{{else}}
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Nothing to show yet.</h4>
+    <p>Please enter some blog posts</p>
+    <hr>
+    <p class="mb-0">CLick the link and post something...</p>
+    <a class="btn btn-primary btn-lg" href="/posts/add-post" role="button">Create new post</a>
+</div>
+{{/each }}
