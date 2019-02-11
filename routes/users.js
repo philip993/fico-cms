@@ -8,4 +8,5 @@ router.post("/register", userCtrl.postRegister);
 router.get("/login", userCtrl.getLoginForm);
 router.post("/login", userCtrl.postLogin);
 router.get("/logout", userCtrl.getLogout);
+router.get("/profile/:id", userCtrl.getProfile);
 module.exports = router;

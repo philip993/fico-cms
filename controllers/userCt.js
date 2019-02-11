@@ -48,3 +48,7 @@ exports.getLogout = (req, res) => {
   req.logout();
   res.redirect("/");
 };
+
+exports.getProfile = (req, res) => {
+  res.send("profle page");
+};
