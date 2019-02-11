@@ -11,10 +11,19 @@ const users = require("./routes/users");
 const rest = require("./routes/rest");
 
 mongoose.Promise = global.Promise;
+/* compass - home
 mongoose
   .connect("mongodb://localhost/new-blog", { useNewUrlParser: true })
   .then(() => console.log("Connected to mongoDB"))
   .catch(err => console.log("Could not connect to mongoDB"));
+*/
+// ofice laptop
+mongoose.connect(
+  "mongodb+srv://rest-shop-901:brando902part12@node-rest-api-aulzl.mongodb.net/new-blog?retryWrites=true",
+  {
+    useNewUrlParser: true
+  }
+);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
